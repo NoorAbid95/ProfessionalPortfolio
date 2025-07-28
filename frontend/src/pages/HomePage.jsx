@@ -5,6 +5,10 @@ import GithubImg from "../assets/Github.png";
 import ResumeModal from "../components/ResumeModal";
 import { useState } from "react";
 import { FileText } from "lucide-react";
+import ContactForm from "../components/ContactForm";
+import LinkedInIcon from "../assets/linkedin_icon.png"
+import XIcon from "../assets/x_icon.png"
+import GithubIcon from "../assets/github_icon.png"
 
 const HomePage = () => {
   const [showResume, setShowResume] = useState(false);
@@ -34,7 +38,7 @@ const HomePage = () => {
           >
             <li className="hover:scale-103 cursor-pointer">01. Projects</li>
             <li className="hover:scale-103 cursor-pointer">02. Work</li>
-            <li className="hover:scale-103 cursor-pointer">03. E-mail</li>
+            <li className="hover:scale-103 cursor-pointer">03. Contact</li>
           </ul>
         </div>
       </section>
@@ -51,14 +55,14 @@ const HomePage = () => {
       {/* {Hero Section 2} */}
       <section className="w-full min-h-screen flex justify-center items-center px-6">
         <div className="flex flex-col w-full max-w-6xl justify-center">
-          <p className="text-gray-400 text-sm">01.1 -</p>
+          <p className="text-gray-400 text-sm">01.0 -</p>
           <p id="heading1" className="font-bold text-5xl mb-6 text-left">
-            ChapterRewind{" "}
+            Projects{" "}
             <span className="font-normal">
-              - generate book recaps before starting the next
+              - checkout my personal web development projects
             </span>
           </p>
-          <p className="text-gray-400 mb-1">01.1 - A DEMO</p>
+          <p className="text-gray-400 mb-1">01.1 ChapterRewind - generate book recaps before starting the next</p>
 
           <div className="flex flex-col lg:flex-row gap-10 items-start mt-4">
             {/* Video + Links container */}
@@ -141,11 +145,11 @@ const HomePage = () => {
           02. Work
         </span>
       </div>
-
+      {/* {Hero Section 3} */}
       <section className="w-full min-h-screen flex justify-center items-center px-6">
         <div className="flex flex-col w-full max-w-6xl">
           <div className="flex flex-col items-start">
-            <p className="text-gray-400 text-sm">02.1 -</p>
+            <p className="text-gray-400 text-sm">02.0 -</p>
             <p id="heading2" className="font-bold text-5xl mb-6 text-left">
               Work{" "}
               <span className="font-normal">
@@ -173,7 +177,7 @@ const HomePage = () => {
             <p className="text-gray-400">02.2 - The Resume</p>
             <button
               onClick={() => setShowResume(true)}
-              className="mt-4 inline-flex items-center gap-2 px-6 py-4 bg-gray-800 text-white rounded-sm  shadow hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
+              className="mt-4 inline-flex items-center gap-2 px-6 py-4 bg-black text-white rounded-sm  shadow hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
             >
               <FileText size={18} />
               Check Out My Professional Experience
@@ -183,6 +187,37 @@ const HomePage = () => {
             isOpen={showResume}
             onClose={() => setShowResume(false)}
           />
+        </div>
+      </section>
+      {/* {Divider} */}
+      <div className="flex items-center w-full">
+        <hr className="flex-grow border-t border-1 border-gray-400/30" />
+        <span className="mx-8 text-gray-600/70 whitespace-nowrap">
+          03. Contact
+        </span>
+      </div>
+      {/* {Hero Section 4} */}
+      <section className="w-full min-h-screen flex justify-center items-center px-6">
+        <div className="flex flex-col w-full max-w-6xl">
+          <div className="flex flex-col items-start">
+            <p className="text-gray-400 text-sm">03.0 -</p>
+            <p id="heading2" className="font-bold text-5xl mb-6 text-left">
+              Contact{" "}
+              <span className="font-normal">
+                - send me a message or explore my socials if you want to get in touch
+              </span>
+            </p>
+            <p className="text-gray-400 mb-1">03.1 - The E-mail</p>
+          <ContactForm/>
+          </div>
+          <div>
+             <p className="text-gray-400 mb-1">03.2 - The Socials</p>
+             <div className="flex justify-evenly items-center mt-8">
+                <a href="https://www.linkedin.com/in/noorabid/"target="_blank"><img src={LinkedInIcon} alt="LinkedIn Icon" className="h-12 w-12 hover:scale-103" /></a>
+                <a href="https://x.com/NoorAbid"target="_blank"><img src={XIcon} alt="X Icon" className="h-12 w-12 hover:scale-103"/></a>
+                <a href="https://github.com/NoorAbid95"target="_blank"><img src={GithubIcon} alt="Github Icon" className="h-12 w-12 hover:scale-103"/></a>
+             </div>
+          </div>
         </div>
       </section>
     </>

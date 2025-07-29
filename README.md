@@ -4,7 +4,7 @@ Welcome to my personal developer portfolio — a responsive, interactive web app
 
 **Live Site:**  
 [https://professionalportfolio-d0nm.onrender.com](https://professionalportfolio-d0nm.onrender.com)
-*Note: allow 15–30 seconds for site to spin up*
+<sub>*Note: allow 15–30 seconds for site to spin up*</sub>
 
 ---
 

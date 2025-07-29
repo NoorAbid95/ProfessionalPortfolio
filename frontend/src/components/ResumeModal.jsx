@@ -15,7 +15,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
       onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
-          className="absolute top-3 right-4 text-xl font-bold text-gray-600 hover:text-black"
+          className="absolute top-3 right-4 text-xl font-bold text-gray-600 hover:text-black cursor-pointer"
           onClick={onClose}
         >
           ×

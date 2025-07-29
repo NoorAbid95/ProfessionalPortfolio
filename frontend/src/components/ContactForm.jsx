@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import toast from 'react-hot-toast'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,22 +16,25 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(
         "http://localhost:3000/api/contact/send-email",
         formData
       );
       console.log("Success:", response.data);
-      alert("Message Sent");
+      toast.success("Message Sent!")
       setFormData({ name: "", email: "", message: "" }); // Reset form
     } catch (error) {
       console.error("Error details:", error.response?.data || error.message);
-      alert("Failed to send message");
+      toast.error("Message Failed to Send")
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-xl w-full mx-auto p-6 bg-white">
+    <div className="max-w-xl w-full mx-auto  bg-white">
       <form onSubmit={handleSubmit}>
         <div className="flex gap-4 mb-4">
           <div className="w-1/2">
@@ -77,9 +81,21 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          className="w-full mt-2 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+          disabled={loading}
+          className={`w-full mt-2 py-3 rounded-lg transition-colors duration-200 ${
+            loading
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-black text-white hover:bg-gray-800"
+          }`}
         >
-          Send Message
+          {loading ? (
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              Sending...
+            </div>
+          ) : (
+            "Send Message"
+          )}
         </button>
       </form>
     </div>

@@ -42,7 +42,7 @@ Welcome to my personal developer portfolio — a responsive, interactive web app
 
 ## Contact
 
-The site includes a working contact form — feel free to get in touch there, or through my social links below:
+The site includes a working contact form. Feel free to get in touch there, or through my social links below:
 
 - [LinkedIn](https://www.linkedin.com/in/noorabid/)
 - [Twitter / X](https://x.com/NoorAbid)

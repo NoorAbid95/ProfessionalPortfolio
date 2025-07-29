@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../utils/axios.js";
 import toast from 'react-hot-toast'
 
 const ContactForm = () => {
@@ -19,7 +19,7 @@ const ContactForm = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/contact/send-email",
+        "/contact/send-email",
         formData
       );
       console.log("Success:", response.data);

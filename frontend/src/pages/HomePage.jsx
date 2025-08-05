@@ -9,6 +9,8 @@ import ContactForm from "../components/ContactForm";
 import LinkedInIcon from "../assets/linkedin_icon.png";
 import XIcon from "../assets/x_icon.png";
 import GithubIcon from "../assets/github_icon.png";
+import ProjectCard from "../components/ProjectCard";
+import StackSearchDemo from "../assets/StackSearchDemo.mp4"
 
 const HomePage = () => {
   const [showResume, setShowResume] = useState(false);
@@ -61,96 +63,52 @@ const HomePage = () => {
       {/* {Hero Section 2} */}
       <section
         id="projects"
-        className="w-full min-h-screen flex justify-center items-center px-6"
+        className="w-full min-h-screen flex flex-col justify-center items-center px-6"
       >
         <div className="flex flex-col w-full max-w-6xl justify-center">
           <p className="text-gray-400 text-sm mt-17">01.0 -</p>
-          <p id="heading1" className="font-bold text-5xl mb-6 text-left">
+          <p id="heading1" className="font-bold text-5xl *: mb-6 text-left">
             Projects{" "}
             <span className="font-normal">
               - checkout my personal web development projects
             </span>
           </p>
-          <p className="text-gray-400 mb-1">
-            01.1 ChapterRewind - generate book recaps before starting the next
-          </p>
+          <ProjectCard
+            reference="01.1"
+            title="ChapterRewind"
+            description="generate book recaps before starting the next"
+            videoSrc={ChapterRewindDemo}
+            codeLink="https://github.com/NoorAbid95/ChapterRewind"
+            liveLink="https://chapterrewind.onrender.com/"
+            stack={["React", "Node.js", "Express", "MongoDB"]}
+            frameworks={["Express.js", "Tailwind CSS"]}
+            libs={[
+              "Zustand",
+              "Axios",
+              "OpenAI API",
+              "YouTube API",
+              "GoogleBooks API",
+            ]}
+          />
 
-          <div className="flex flex-col  gap-10  mt-4 w-full lg:w-full lg:justify-center ">
-            {/* Video + Links container */}
-            <div className="flex flex-col w-full">
-              {/* Video */}
-              <div
-                id="video"
-                className="flex aspect-video relative overflow-hidden shadow-sm shadow-black mb-6"
-              >
-                <video
-                  src={ChapterRewindDemo}
-                  controls
-                  className="absolute top-[-88px] h-[calc(100%+100px)] w-full object-cover"
-                />
-              </div>
+        {/* {separator} */}
+      <div className="flex items-center w-full mt-4">
+      <hr className="flex-grow border-t border-1 border-gray-400/30" />
 
-              {/* Links: "THE CODE" and "THE PAGE" */}
-              <div className="flex space-x-6 text-gray-500">
-                <a
-                  href="https://github.com/NoorAbid95/ChapterRewind"
-                  className="hover:text-gray-600 hover:scale-102 hover:font-semibold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  the code
-                </a>
-                <div className="group relative">
-                  <a
-                    href="https://chapterrewind.onrender.com/"
-                    className="hover:text-gray-600 hover:scale-102 hover:font-semibold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    the page
-                  </a>
-                  <p className="text-xs mt-1 transition-all duration-300 ease-in-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0">
-                    Allow 15-30 seconds for page to spin up
-                  </p>
-                </div>
-              </div>
-            </div>
+      </div>
+          <ProjectCard 
+          reference="01.2"
+          title="Stack Search Australia"
+          description= "find software development jobs in Australia"
+          videoSrc={StackSearchDemo}
+          codeLink="https://github.com/NoorAbid95/stack-search-australia"
+          liveLink="https://stack-search-australia.onrender.com/"
+          stack={["React", "Node.js", "Express"]}
+          frameworks={['Express.js', "Tailwind CSS" ]}
+          libs={["Axios", "Adzuna API", "React-Leaflet", "TypeAnimation"]}
 
-            {/* Tech Stack Container */}
-            <div className="w-full h-full flex flex-col gap-2 text-left   mt-[-3vh] ">
-              {/* Stack */}
-              <div className="group relative cursor-pointer">
-                <h3 className="font-semibold text-lg mb-2">STACK</h3>
-                <ul className="list-inside text-sm space-y-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>Express</li>
-                  <li>MongoDB</li>
-                </ul>
-              </div>
 
-              {/* Frameworks */}
-              <div className="group relative cursor-pointer">
-                <h3 className="font-semibold text-lg mb-2">FRAMEWORKS</h3>
-                <ul className="list-inside text-sm space-y-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <li>Express.js</li>
-                  <li>Tailwind CSS</li>
-                </ul>
-              </div>
-
-              {/* Libs */}
-              <div className="group relative cursor-pointer">
-                <h3 className="font-semibold text-lg mb-2">LIBS</h3>
-                <ul className="list-inside text-sm space-y-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-32 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <li>Zustand</li>
-                  <li>Axios</li>
-                  <li>OpenAI API</li>
-                  <li>YouTube API</li>
-                  <li>GoogleBooks API</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          />
         </div>
       </section>
 
